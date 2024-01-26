@@ -13,6 +13,7 @@ func SetSimpleRouters(router *gin.Engine) *gin.Engine {
 		authorized.POST("/item", simple.PostItem)
 		authorized.DELETE("/item/:id", simple.DeleteItem)
 		authorized.PUT("/item", simple.PutItem)
+		authorized.PATCH("/item", simple.PatchItem)
 	}
 
 	return router

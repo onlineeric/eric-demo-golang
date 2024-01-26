@@ -7,7 +7,7 @@ import (
 	"github.com/onlineeric/eric-gin-server/models"
 )
 
-func PutItem(c *gin.Context) {
+func PatchItem(c *gin.Context) {
 	var item models.Item
 	if err := c.BindJSON(&item); err != nil {
 		c.IndentedJSON(http.StatusBadRequest, gin.H{"error": err.Error(), "message": "Invalid Item"})
@@ -15,5 +15,5 @@ func PutItem(c *gin.Context) {
 	}
 
 	// todo: update logic here
-	c.JSON(http.StatusOK, gin.H{"message": "Sorry, PUT logic is not actually implemented yet."})
+	c.JSON(http.StatusOK, gin.H{"message": "Sorry, PATCH logic is not actually implemented yet."})
 }
