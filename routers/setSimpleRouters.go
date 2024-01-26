@@ -10,7 +10,7 @@ func SetSimpleRouters(router *gin.Engine) *gin.Engine {
 	authorized := router.Group("/simple", middlewares.BasicAuth())
 	{
 		authorized.GET("/item/:id", simple.GetItem)
-		//authorized.POST("setUser", user.PostSetUser)
+		authorized.POST("/item", simple.PostItem)
 	}
 
 	return router
