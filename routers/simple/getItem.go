@@ -1,4 +1,4 @@
-package item
+package simple
 
 import (
 	"net/http"
@@ -8,14 +8,14 @@ import (
 	"github.com/onlineeric/eric-gin-server/stores"
 )
 
-func GetUser(c *gin.Context) {
-	userIdStr := c.Params.ByName("id")
-	userId, err := strconv.Atoi(userIdStr)
+func GetItem(c *gin.Context) {
+	itemIdStr := c.Params.ByName("id")
+	itemId, err := strconv.Atoi(itemIdStr)
 	if err != nil {
 		c.IndentedJSON(http.StatusBadRequest, gin.H{"error": "invalid id, must be int"})
 		return
 	}
-	item, ok := stores.ItemDb[userId]
+	item, ok := stores.ItemDb[itemId]
 	if ok {
 		c.JSON(http.StatusOK, item)
 	} else {
