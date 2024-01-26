@@ -13,7 +13,7 @@ func main() {
 	router.GET("/status", getStatus)
 	routers.SetSimpleRouters(router)
 
-	router.Run("localhost:8080")
+	router.Run("0.0.0.0:8080")
 }
 
 func getStatus(c *gin.Context) {
