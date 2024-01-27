@@ -10,26 +10,30 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
+        - name: 'Get version'
+          id: get_version
+          run: echo "::set-output name=version::$(go run appVersion.go)"
+        
         - name: 'Checkout GitHub Action'
           uses: actions/checkout@master
             
         - name: 'Login via Docker Hub'
-          uses: docker/login-action@v1 
+          uses: docker/login-action@v2
           with:
               username: ${{ secrets.DOCKER_HUB_USERNAME }}
               password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
                 
         - name: 'Build and push Docker image'
-          uses: docker/build-push-action@v2
+          uses: docker/build-push-action@v4
           with:
               context: .
               push: true
-              tags: ${{ secrets.DOCKER_HUB_USERNAME }}/my-repo:latest
+              tags: ${{ secrets.DOCKER_HUB_USERNAME }}/eric-gin-server:latest, ${{ secrets.DOCKER_HUB_USERNAME }}/eric-gin-server:${{ steps.get_version.outputs.version }}
 
         - name: 'Deploy to Azure Web App'
           uses: azure/webapps-deploy@v2
           with: 
-              app-name: 'your-app-name' 
+              app-name: 'eric-gin-server' 
               slot-name: 'production' 
               publish-profile: ${{ secrets.AZURE_WEB_APP_PUBLISH_PROFILE }}
-              images: ${{ secrets.DOCKER_HUB_USERNAME }}/my-repo:latest
+              images: ${{ secrets.DOCKER_HUB_USERNAME }}/eric-gin-server:latest
