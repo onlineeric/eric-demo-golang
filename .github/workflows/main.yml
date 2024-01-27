@@ -10,9 +10,14 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
+        - name: 'Set up Go'
+          uses: actions/setup-go@v2
+          with:
+              go-version: 1.16  # Use the specific Go version 
+
         - name: 'Get version'
           id: get_version
-          run: echo "::set-output name=version::$(go run appVersion.go)"
+          run: echo "appVersion=$(go run appVersion.go)" >> $GITHUB_ENV
         
         - name: 'Checkout GitHub Action'
           uses: actions/checkout@master
@@ -28,7 +33,7 @@ jobs:
           with:
               context: .
               push: true
-              tags: ${{ secrets.DOCKER_HUB_USERNAME }}/eric-gin-server:latest, ${{ secrets.DOCKER_HUB_USERNAME }}/eric-gin-server:${{ steps.get_version.outputs.version }}
+              tags: ${{ secrets.DOCKER_HUB_USERNAME }}/eric-gin-server:latest, ${{ secrets.DOCKER_HUB_USERNAME }}/eric-gin-server:${{ env.appVersion }}
 
         - name: 'Deploy to Azure Web App'
           uses: azure/webapps-deploy@v2
