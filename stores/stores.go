@@ -19,4 +19,10 @@ func init() {
 		Description: "item2 description",
 		Price:       2.222,
 	}
+	ItemDb[3] = &models.Item{
+		ID:          3,
+		Name:        "item3",
+		Description: "item3 description",
+		Price:       3.3333,
+	}
 }

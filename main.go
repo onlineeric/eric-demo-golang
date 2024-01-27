@@ -7,7 +7,7 @@ import (
 	"github.com/onlineeric/eric-gin-server/routers"
 )
 
-var AppVersion = "0.0.1"
+var AppVersion = "0.0.2"
 
 func main() {
 	router := gin.Default()
