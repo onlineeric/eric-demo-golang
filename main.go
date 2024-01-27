@@ -17,5 +17,5 @@ func main() {
 }
 
 func getStatus(c *gin.Context) {
-	c.IndentedJSON(http.StatusOK, gin.H{"status": "ok"})
+	c.IndentedJSON(http.StatusOK, gin.H{"status": "ok", "version": AppVersion})
 }
