@@ -14,6 +14,7 @@ func main() {
 
 	router.GET("/status", getStatus)
 	routers.SetSimpleRouters(router)
+	routers.SetBenchmarkRouters(router)
 
 	router.Run("0.0.0.0:8080")
 }
