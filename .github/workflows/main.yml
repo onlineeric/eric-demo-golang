@@ -20,7 +20,7 @@ jobs:
       - name: "Login via Docker Hub"
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          username: onlineeric
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
       - name: "Build and push Docker image"
@@ -28,7 +28,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/eric-gin-server:latest, ${{ secrets.DOCKER_HUB_USERNAME }}/eric-gin-server:${{ env.APP_VERSION }}
+          tags: onlineeric/eric-gin-server:latest, onlineeric/eric-gin-server:${{ env.APP_VERSION }}
 
   deploy-to-azure:
     needs: build-and-push-to-docker-hub
@@ -41,4 +41,4 @@ jobs:
           app-name: "eric-gin-server"
           slot-name: "production"
           publish-profile: ${{ secrets.AZURE_WEB_APP_PUBLISH_PROFILE }}
-          images: ${{ secrets.DOCKER_HUB_USERNAME }}/eric-gin-server:latest
+          images: onlineeric/eric-gin-server:latest
