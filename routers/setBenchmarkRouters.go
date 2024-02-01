@@ -10,6 +10,7 @@ func SetBenchmarkRouters(router *gin.Engine) *gin.Engine {
 	authorized := router.Group("/benchmark", middlewares.BasicAuth())
 	{
 		authorized.GET("/Sha256/:exeTimes", benchmark.GetSha256)
+		authorized.GET("/Md5/:exeTimes", benchmark.GetMd5)
 	}
 
 	return router
