@@ -2,6 +2,8 @@
 
 Welcome! This repository is a personal project, where I, Eric Cheng, am learning and studying the Go programming language and the Gin web framework.
 
+[<img src="https://go.dev/blog/go-brand/Go-Logo/PNG/Go-Logo_Blue.png" width="60">](https://pkg.go.dev/go.dev/) [![Gin](https://avatars.githubusercontent.com/u/7894478?s=48&v=4)](https://gin-gonic.com/)
+
 ## Project Description
 
 This project serves as a demonstration of my progress in learning Go and Gin. I use it to explore various features and concepts in Go programming and Gin web development.
