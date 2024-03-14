@@ -3,6 +3,11 @@
 Welcome! This repository is a personal project, where I, Eric Cheng, am learning and studying the Go programming language and the Gin web framework.
 
 [<img src="https://go.dev/blog/go-brand/Go-Logo/PNG/Go-Logo_Blue.png" width="60">](https://pkg.go.dev/go.dev/) [![Gin](https://avatars.githubusercontent.com/u/7894478?s=48&v=4)](https://gin-gonic.com/)
+![Docker](https://img.shields.io/badge/-Docker-2496ED?logo=docker&logoColor=white)
+![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/-GitHub%20Actions-2088FF?logo=github-actions&logoColor=white)
+![CI/CD](https://img.shields.io/badge/-CI%2FCD-5C6BC0?logo=jenkins&logoColor=white)
+![Azure](https://img.shields.io/badge/-Azure-0089D6?logo=microsoft-azure&logoColor=white)
 
 ## Project Description
 
