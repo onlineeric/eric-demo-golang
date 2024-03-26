@@ -41,7 +41,7 @@ func (test *TestSha256) Run(loopCount int) {
 	for i := 0; i < loopCount; i++ {
 		sha256.Sum256(test.data)
 	}
-	test.StopBenchmarking()
+	test.StopBenchmarking("Sha256")
 }
 
 func NewTestMd5() *TestMd5 {
@@ -56,5 +56,5 @@ func (test *TestMd5) Run(loopCount int) {
 	for i := 0; i < loopCount; i++ {
 		md5.Sum(test.data)
 	}
-	test.StopBenchmarking()
+	test.StopBenchmarking("Md5")
 }

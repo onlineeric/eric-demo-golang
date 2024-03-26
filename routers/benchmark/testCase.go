@@ -4,6 +4,8 @@ import (
 	"runtime"
 	"runtime/debug"
 	"time"
+
+	"github.com/google/uuid"
 )
 
 type TestCase struct {
@@ -28,13 +30,16 @@ func (tc *TestCase) StartBenchmarking() {
 	tc.stopwatchStart = time.Now()
 }
 
-func (tc *TestCase) StopBenchmarking() {
+func (tc *TestCase) StopBenchmarking(algorithm string) {
 	var memStats runtime.MemStats
 	runtime.ReadMemStats(&memStats)
 	debug.SetGCPercent(100) // enable garbage collector
 
 	endMemory := memStats.Alloc
 	tc.Result = &TestResult{
+		ID:            uuid.New().String(),
+		Server:        "eric-gin-server",
+		Algorithm:     algorithm,
 		MemoryUsed:    calcMemoryUsed(tc.startMemory, endMemory),
 		ExecutionTime: time.Since(tc.stopwatchStart).Milliseconds(),
 		FinishedTime:  time.Now(),
