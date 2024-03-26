@@ -37,12 +37,13 @@ func (tc *TestCase) StopBenchmarking(algorithm string) {
 
 	endMemory := memStats.Alloc
 	tc.Result = &TestResult{
-		ID:            uuid.New().String(),
-		Server:        "eric-gin-server",
-		Algorithm:     algorithm,
-		MemoryUsed:    calcMemoryUsed(tc.startMemory, endMemory),
-		ExecutionTime: time.Since(tc.stopwatchStart).Milliseconds(),
-		FinishedTime:  time.Now(),
+		ID:              uuid.New().String(),
+		Server:          "eric-gin-server",
+		Algorithm:       algorithm,
+		Parallelization: false,
+		MemoryUsed:      calcMemoryUsed(tc.startMemory, endMemory),
+		ExecutionTime:   time.Since(tc.stopwatchStart).Milliseconds(),
+		FinishedTime:    time.Now(),
 	}
 }
 
