@@ -19,5 +19,5 @@ func (test *TestMd5) Run(loopCount int) {
 	for i := 0; i < loopCount; i++ {
 		md5.Sum(test.data)
 	}
-	test.StopBenchmarking("Md5")
+	test.StopBenchmarking("MD5")
 }

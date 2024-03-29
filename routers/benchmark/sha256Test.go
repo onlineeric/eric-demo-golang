@@ -19,5 +19,5 @@ func (test *TestSha256) Run(loopCount int) {
 	for i := 0; i < loopCount; i++ {
 		sha256.Sum256(test.data)
 	}
-	test.StopBenchmarking("Sha256")
+	test.StopBenchmarking("SHA256")
 }
