@@ -38,7 +38,7 @@ func (tc *TestCase) StopBenchmarking(algorithm string) {
 	endMemory := memStats.Alloc
 	tc.Result = &TestResult{
 		ID:              uuid.New().String(),
-		Server:          "eric-gin-server",
+		Server:          "eric-gin-server (Golang)",
 		Algorithm:       algorithm,
 		Parallelization: false,
 		MemoryUsed:      calcMemoryUsed(tc.startMemory, endMemory),
