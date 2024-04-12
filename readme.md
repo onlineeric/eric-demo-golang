@@ -21,7 +21,7 @@ This project serves as a demonstration of my progress in learning Go and Gin. I 
 
 ## Project Ambition
 
-Beyond this Go and Gin implementation, my overarching objective is to create a multi-language demo project that showcases my knowledge and skills. I plan to replicate this project in .NET and Rust to demonstrate proficiency across these platforms. Furthermore, I intend to develop a corresponding user interface using ReactJS, thus highlighting my front-end development capabilities as well. 
+Beyond this GoLang implementation, my overarching objective is to create a multi-language demo project that showcases my knowledge and skills. I have created a similar project in C#, [My Demo Website](https://agreeable-water-061d90800.5.azurestaticapps.net) is connected to both the C# and GoLang backend.
 
 ## Installation and Running
 
