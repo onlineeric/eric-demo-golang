@@ -1,4 +1,4 @@
-# Eric's Go and Gin Framework Learning Project
+# Eric's Go and Gin Framework Demo Project
 
 Welcome! I'm Eric Cheng, this repository is one of personal demo project to showcase my full stack and AI development skills.
 
@@ -37,7 +37,3 @@ cd into ginWebServer, and run the project with:
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgements
-
-I would like to thank everyone who made Go and Gin possible, and the community around these projects for creating such a fantastic learning environment.
